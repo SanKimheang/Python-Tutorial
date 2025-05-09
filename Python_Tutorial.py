@@ -501,3 +501,81 @@ print(type(mylist))
 # The list() Constructor
 thislist = list(("apple", "banana", "cherry"))
 print(thislist)
+# Access List Items
+print(thislist[1]) # banana
+# Negative Indexing
+# -1 refers to the last item, -2 refers to the second last item etc.
+print(thislist[-1]) # cherry
+# Range of Indexes
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+print(thislist[2:5]) # ['cherry', 'orange', 'kiwi']
+print(thislist[:4]) # ['apple', 'banana', 'cherry', 'orange']
+print(thislist[2:]) # ['cherry', 'orange', 'kiwi', 'mango']
+print(thislist[-4:-1]) # ['orange', 'kiwi', 'mango']
+# Check if Item Exists
+list = ["apple", "banana", "cherry"]
+if "apple" in list:
+    print("Yes, 'apple' is in the fruits list")
+# Change Item Value
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist) # ['apple', 'blackcurrant', 'cherry']
+# Change a Range of Item Values
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist) # ['apple', 'blackcurrant', 'watermelon', 'orange', 'kiwi', 'mango']
+# Change the second value by replacing it with two new values:
+thislist = ["apple", "banana", "cherry"]
+thislist[1:2] = ["blackcurrant", "watermelon"]
+print(thislist) # ['apple', 'blackcurrant', 'watermelon', 'cherry']
+# Change the second and third value by replacing it with one new value:
+thislist = ["apple", "banana", "cherry"]
+thislist[1:3] = ["watermelon"]
+print(thislist) # ['apple', 'watermelon']
+# Insert Items
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(1, "orange")
+print(thislist) # ['apple', 'orange', 'banana', 'cherry']
+
+# Add List Items
+# Append Items
+thislist = ["apple", "banana", "cherry"]
+thislist.append("orange")
+print(thislist) # ['apple', 'banana', 'cherry', 'orange']
+# Extend List
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical)
+print(thislist) # ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+# Add Any Iterable
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)
+print(thislist) # ['apple', 'banana', 'cherry', 'kiwi', 'orange']
+
+# Remove List Items
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+print(thislist) # ['apple', 'cherry']
+# If there are more than one item with the specified value, the remove() method removes the first occurrence of the value.
+thislist = ["apple", "banana", "cherry", "banana"]
+thislist.remove("banana")
+print(thislist) # ['apple', 'cherry', 'banana']
+# Remove Specified Index
+# The pop() method removes the specified index, (or the last item if index is not specified)
+thislist = ["apple", "banana", "cherry"]
+thislist.pop(1)
+print(thislist) # ['apple', 'cherry']
+thislist = ["apple", "banana", "cherry"]
+thislist.pop()
+print(thislist) # ['apple', 'banana']
+# Delete List Items
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print(thislist) # ['banana', 'cherry']
+# Delete the entire list:
+thislist = ["apple", "banana", "cherry"]
+del thislist
+# Clear the List
+thislist.clear()
+print(thislist)
