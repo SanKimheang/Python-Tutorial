@@ -579,3 +579,93 @@ del thislist
 # Clear the List
 thislist.clear()
 print(thislist)
+
+# Loop Lists
+# Loop Through a List
+fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry']
+for x in fruits:
+    print(x)
+# Loop Through the Index Numbers
+for i in range(len(fruits)):
+    print(fruits[i])
+# Using a While Loop
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+    print(thislist[i])
+    i += 1
+# Looping Using List Comprehension
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+
+# List Comprehension
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+for x in fruits:
+    if "a" in x:
+        newlist.append(x)
+print(newlist) # ['apple', 'banana', 'mango']
+# With list comprehension you can do all that with only one line of code:
+newlist = [x for x in fruits if "a" in x]
+print(newlist) # ['apple', 'banana', 'mango']
+# The Syntax
+# newlist = [expression for item in iterable if condition == True]
+newlist = [x for x in fruits if x != "apple"]
+# Expression
+newlist = [x.upper() for x in fruits]
+print(newlist) # ['APPLE', 'BANANA', 'CHERRY', 'KIWI', 'MANGO']
+# Set all values in the new list to 'hello':
+newlist = ['hello' for x in fruits]
+print(newlist) # ['hello', 'hello', 'hello', 'hello', 'hello']
+# Return "orange" instead of "banana":
+newlist = [x if x != "banana" else "orange" for x in fruits]
+
+# Sort Lists
+# Sort List Alphanumerically
+# Sort the list alphabetically
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort()
+print(thislist) # ['banana', 'kiwi', 'mango', 'orange', 'pineapple']
+# Sort the list numerically
+thislist = [100, 50, 65, 82, 23]
+thislist.sort()
+print(thislist)
+# Sort th elist descending:
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+print(thislist)
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(reverse = True)
+print(thislist)
+# Customize Sort Function
+def myfunc(n):
+    return abs(n - 50)
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)
+# Case Insensitive Sort
+# By default the sort() method is case sensitive, resulting in all capital being sorted before lower case letters:
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort()
+print(thislist) # ['Kiwi', 'Orange', 'banana', 'cherry']
+# Reverse Order
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.reverse()
+print(thislist)
+
+# Copy Lists
+"""
+Copy a List
+You cannot copy a list simply by typing list2 = list1, becuase: list2 will only be a reference to list1,
+and changes made in list1 will automatically also be made in list2.
+"""
+# Use the copy() method
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+# Use the list() method
+mylist = list(thislist)
+print(mylist)
+# Use the slice Operator
+mylist = thislist[:]
+print(mylist)
