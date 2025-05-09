@@ -484,3 +484,20 @@ print(6 + 3 - 2 * 5) # 1
 # A list is a collection which is ordered and changeable. Allows duplicate members.
 thislist = ["apple", "banana", "cherry"]
 print(thislist) # ['apple', 'banana', 'cherry']
+# Allow Duplicates
+thislist = ["apple", "banana", "cherry", "apple", "cherry"]
+print (thislist)
+# List Length
+print(len(thislist))
+# List Items - Data Types
+list1 = ["apple", "banana", "cherry"]
+list2 = [1, 4, 5, 8]
+list3 = [True, False, False]
+# A list can contain different data types:
+list = ["abc", 34, True, 22, 45.67, "male"]
+# Type()
+mylist = ["apple", "banana", "cherry"]
+print(type(mylist))
+# The list() Constructor
+thislist = list(("apple", "banana", "cherry"))
+print(thislist)
