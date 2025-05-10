@@ -669,3 +669,154 @@ print(mylist)
 # Use the slice Operator
 mylist = thislist[:]
 print(mylist)
+
+# Join Lists
+# Join two Lists
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+list3 = list1 + list2
+print(list3)
+# or
+for x in list2:
+    list1.append(x)
+print(list1)
+# Using extend() method
+list1.extend(list2)
+print(list1)
+# List Methods
+"""
+append()	Adds an element at the end of the list
+clear()	Removes all the elements from the list
+copy()	Returns a copy of the list
+count()	Returns the number of elements with the specified value
+extend()	Add the elements of a list (or any iterable), to the end of the current list
+index()	Returns the index of the first element with the specified value
+insert()	Adds an element at the specified position
+pop()	Removes the element at the specified position
+remove()	Removes the item with the specified value
+reverse()	Reverses the order of the list
+sort()	Sorts the list
+"""
+
+# Tuples
+# Tuples are ordered, immutable, and allow duplicate values.
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+# Allowing duplicate Values:
+thistuple = ("apple", "banana", "cherry", "apple", "cherry")
+print(thistuple)
+# Tuple Length
+thistuple = ("apple", "banana", "cherry")
+print(len(thistuple))
+# Create Tuple with One Item
+thistuple = ("apple",)
+print(type(thistuple))
+
+#NOT a tuple
+thistuple = ("apple")
+print(type(thistuple))
+# Tuple Items - Data Types
+tuple1 = ("apple", "banana", "cherry")
+tuple2 = (1, 5, 7, 9, 3)
+tuple3 = (True, False, False)
+# A tuple can contain different data types:
+tuple1 = ("abc", 34, True, 45.67)
+# type()
+print(type(tuple1))
+# The tuple() Constructor
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+
+# Access Tuple Items
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[1]) # banana
+# Negative Indexing
+print(thistuple[-1]) # cherry
+# Range of Indexes
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "mango")
+print(thistuple[2:5]) # ['cherry', 'orange', 'kiwi']
+print(thistuple[:4]) # ['apple', 'banana', 'cherry', 'orange']
+print(thistuple[2:]) # ['cherry', 'orange', 'kiwi', 'mango']
+print(thistuple[-4:-1]) # ['orange', 'kiwi', 'mango']
+# Check if Item Exists
+if "apple" in thistuple:
+    print("yes, 'apple' is in the fruits tuple")
+
+# Update Tuples
+"""Tuples are unchangeable, meaning that you cannot change, add or remove items once the tuple is created.
+But there is a workaround. You can convert the tuple into a list, change the list, and convert the list back into a tuple."""
+x = ("apple", "banana", "cherry")
+y = list(x) # convert to list
+y[1] = "kiwi" # change the value
+x = tuple(y) # convert back to tuple
+print(x) # ('apple', 'kiwi', 'cherry')
+
+# Add Items
+"""
+Since tuples are immutable, they do not have a built-in append() method, but there are other ways to add items to a tuple.
+
+1. Convert into a list: Just like the workaround for changing a tuple, you can convert it into a list, add your item(s), 
+and convert it back into a tuple.
+"""
+thislist = ("apple", "banana", "cherry")
+y = list(thislist) # convert to list
+y.append("orange") # append
+thislist = tuple(y) # convert back to tuple
+"""
+2. Add tuple to a tuple. You are allowed to add tuples to tuples, so if you want to add one item, (or many), 
+create a new tuple with the item(s), and add it to the existing tuple:
+"""
+thislist = ("apple", "banana", "cherry")
+y = ("orange",)
+thislist += y # add tuple to tuple
+print(thislist) # ('apple', 'banana', 'cherry', 'orange')
+# Remove Items
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.remove("apple")
+thistuple = tuple(y)
+# Or you can delete the tuple completely:
+thistuple = ("apple", "banana", "cherry")
+del thistuple
+print(thistuple) #this will raise an error because the tuple no longer exists
+# Unpack Tuples
+fruits = ("apple", "banana", "cherry") # packing a tuple
+(green, yellow, red) = fruits # unpacking a tuple
+print(green) # apple
+print(yellow) # banana
+print(red) # cherry
+# Using Asterisk*
+# Assign the rest of the values as a list called "red"
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+(green, yellow, *red) = fruits
+print(green) # apple
+print(yellow) # banana
+print(red) # ['cherry', 'strawberry', 'raspberry']
+# Add a list of values the "tropic" variable:
+fruits = ("apple", "mango", "papaya", "pineapple", "banana")
+(green, *tropic, yellow) = fruits
+print(green) # apple
+print(tropic) # ['mango', 'papaya', 'pineapple']
+print(yellow) # banana
+# Loop Tuples
+for x in fruits:
+    print(x)
+# Loop Through the Index Numbers
+thistuple = ("apple", "banana", "cherry")
+for x in range(len(thistuple)):
+    print(thistuple[x])
+# Using a While Loop
+while i < len(thistuple):
+    print(thistuple[i])
+    i += 1
+# Join Tuples
+# Join Two Tuples
+tuple1 = ("a", "b" , "c")
+tuple2 = ("1", "2", "3")
+tuple3 = tuple1 + tuple2
+print(tuple3) # ('a', 'b', 'c', '1', '2', '3')
+# Multiply Tuples
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+print(mytuple) # ('apple', 'banana', 'cherry', 'apple', 'banana', 'cherry')
+
+# Sets
