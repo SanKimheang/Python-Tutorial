@@ -820,3 +820,155 @@ mytuple = fruits * 2
 print(mytuple) # ('apple', 'banana', 'cherry', 'apple', 'banana', 'cherry')
 
 # Sets
+# Sets are used to store multiple items in a single variable.
+# A set is a collection which is unordered, unchangeable*, and unindexed.
+thisset = {"apple", "banana", "cherry"}
+print(thisset)
+# Duplicates not Allowed
+# Duplicate values will be ignored:
+thisset = {"apple", "banana", "cherry", "apple"}
+print(thisset)
+# Note: The values True and 1 are considered the same value in sets, and are treated as duplicates:
+thisset = {"apple", "banana", "cherry", True, 1}
+print(thisset)
+# Note: The values False and 0 are considered the same value in sets, and are treated as duplicates:
+thisset = {"apple", "banana", "cherry", False, True, 0}
+print(thisset)
+# Get the Length of a Set
+print(len(thisset))
+# Set Items - Data Types
+set1 = {"apple", "banana", "cherry"}
+set2 = {1, 5, 7, 9, 3}
+set3 = {True, False, False}
+# A set can contain different data types:
+set = {"abc", 34, True, 40.5}
+# type()
+print(type(set1)) # <class 'set'>
+# The set() Constructor
+thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
+print(thisset) # {'banana', 'cherry', 'apple'}
+# Access Set Items
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+    print(x)
+# Check if Item Exists
+print("apple" in thisset) # True
+# Check if NOT
+print("apple" not in thisset) # False
+# Add Set Items
+thisset = {"apple", "banana", "cherry"}
+thisset.add("orange")
+print(thisset)
+# Add Sets
+set1 = {"apple", "banana", "cherry"}
+tropical = {"mango", "pineapple", "papaya"}
+set1.update(tropical)
+print(set1)
+# Add Any Iterable
+# Add a list to a set:
+set1 = {"apple", "banana", "cherry"}
+mylist = ["kiwi", "orange"]
+set1.update(mylist)
+print(set1)
+# Remove Set Items
+# Note: If the item to remove does not exist, remove() will raise an error.
+thisset = {"apple", "banana", "cherry"}
+thisset.remove("banana")
+print(thisset)
+# Remove "banana" by using the discard() method:
+thisset.discard("banana")
+print(thisset)
+"""You can also use the pop() method to remove an item, but this method will remove a random item,
+so you cannot be sure which item gets removed."""
+thisset = {"apple", "banana", "cherry"}
+x = thisset.pop()
+print(x) # removed item
+print(thisset)
+# The clear() method empties the set:
+thisset.clear()
+print(thisset) # set()
+# The del keyword will delete the set completely:
+del thisset
+# print(thisset) # this will raise an error because the set no longer exists
+# Loop Sets
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+    print(x)
+# Join Sets
+# The union() method returns a new set with all items from the original sets.
+set1 = {"a", "b" , "c"}
+set2 = {"d", "e", "f"}
+set3 = set1.union(set2)
+print(set3)
+# You can use the | operator instead of the union() method, and you will get the same result.
+set3 = set1 | set2
+print(set3)
+# Join Multiple Sets
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = {"Heang", "Meng"}
+set4 = {"apple", "bananas", "cherry"}
+myset = set1.union(set2, set3, set4)
+print(myset)
+# Or
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = {"Heang", "Meng"}
+set4 = {"apple", "bananas", "cherry"}
+myset = set1 | set2 | set3 |set4
+print(myset)
+# Join a Set and a Tuple
+"""Note: The  | operator only allows you to join sets with sets, 
+and not with other data types like you can with the  union() method."""
+x = {"apple", "banana", "cherry"}
+y = ("kiwi", "orange")
+z = x.union(y)
+print(z)
+# Update
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "samsung"}
+set1.update(set2)
+print(set1)
+# Intersection
+# the intersection() method returns a new set with items that are present in both sets.
+set1 = {"apple", "banana", "cherry"}
+set2 = {"banana", "cherry", "date"}
+set3 = set1.intersection(set2)
+print(set3) # {'banana', 'cherry'}
+# Or
+set3 = set1 & set2
+print(set3) # {'banana', 'cherry'}
+"""The intersection_update() method will also keep ONLY the duplicates,
+but it will change the original set instead of returning a new set."""
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set1.intersection_update(set2)
+print(set1)
+# And
+set1 = {"apple", 1,  "banana", 0, "cherry"}
+set2 = {False, "google", 1, "apple", 2, True}
+set3 = set1.intersection(set2)
+print(set3)
+# Difference
+"""The difference() method will return a new set that will contain
+the items that only exist in set1, and not in set2."""
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.difference(set2)
+print(set3) # {'banana', 'cherry'}
+# Or
+set3 = set1 - set2
+print(set3)
+# Use the difference_Update() method to keep the items that are not present in both sets:
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set1.difference_update(set2)
+print(set1)
+# Symmetric Differences
+# The symmetric_difference() method will keep only the elements that are NOT present in both sets.
+set3 = set1.symmetric_difference(set2)
+print(set3) # {'banana', 'cherry', 'google', 'microsoft'}
+# Or
+set3 = set1 ^ set2
+# Symmetric Difference Update
+set1.symmetric_difference_update(set2)
