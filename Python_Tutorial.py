@@ -972,3 +972,39 @@ print(set3) # {'banana', 'cherry', 'google', 'microsoft'}
 set3 = set1 ^ set2
 # Symmetric Difference Update
 set1.symmetric_difference_update(set2)
+
+# Python Dictionaries
+"""
+Dictionaries are used to store data values in key:value pairs.
+A dictionary is a collection which is ordered, changeable and does not allow duplicates.
+"""
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+print(thisdict)
+# Dictionary Items
+print(thisdict["brand"]) # Ford
+# Duplicates Not Allowed
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(thisdict)
+# Dictionary Length
+print(len(thisdict))
+# Dictionary Items - Data Types
+# The values in a dictionary can be of any data type:
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+print(type(thisdict))
+# The dict() Constructor
+thisdict = dict(brand="Ford", model="Mustang", year=1964)
+print(thisdict)
