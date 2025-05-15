@@ -1008,3 +1008,132 @@ print(type(thisdict))
 # The dict() Constructor
 thisdict = dict(brand="Ford", model="Mustang", year=1964)
 print(thisdict)
+# Access Dictionary Items
+x = thisdict["model"]
+# There is also a method called get() that will give you the same result:
+x = thisdict.get("model")
+# Get keys
+# The keys() method will return a list of all the keys in the dictionary.
+x = thisdict.keys()
+# And
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.keys()
+print(x) #before the change
+car["color"] = "white"
+print(x) #after the change
+# Get Values 
+# The values() method will return a list of all the values in the dictionary.
+x = thisdict.values()
+# And
+car = {
+    "brand" : "Ford",
+    "model" : "Mustang",
+    "year" : 1964
+}
+x = car.values()
+print(x) # before the change
+car["year"] =2020
+print(x) # after the change
+# Add a new item to the original dictionary
+car = {
+    "brand" : "Ford",
+    "model" : "Mustang",
+    "year" : 1964
+}
+x = car.values()
+print(x) # before the change
+car["color"] = "red"
+print(x) # after the change
+# Get Items
+# The item() method will return each item in a dictionary, as tuples in a list.
+x = thisdict.items()
+# Check if Key Exists
+if "model" in car:
+    print("Yes, 'model' is one of the keys in the car dictionary")
+# Change Dictionary Items
+# Change Values
+car["year"] = 2025
+# Update Dictionary
+# The update() method will update the dictionary with the items from the given argument.
+car.update({"year":2025})
+# Adding Items
+car["color"] = "black"
+# Update Dictionary
+car.update({"color":"red"})
+# Removing Items
+# the pop() mehtod removes the item with the specified key name:
+car.pop("color")
+# The popitem() method removes the last inserted item
+car.popitem()
+# The del keyword removes the item with the specified key name:
+del car["color"]
+# the del keyword can also delete the dictionary completely:
+del car
+# The clear() method empties the dictionary:
+car.clear()
+# Loop Through a Dictionary
+# Print all key names in the dictionary, one by one:
+for x in car:
+    print(x)
+# Print all values in the dictionary, one by one:
+for x in car:
+    print(car[x])
+# You can also use the values() method to return values of a dictionary:
+for x in car.values():
+    print(x)
+# You can use the keys() method to return the keys of a dictionary:
+for x in car.keys():
+    print(x)
+# Loop through both keys and values, by using the item() method:
+for x, y in car.item():
+    print(x,y)
+# Copy a Dictionary
+mydict = car.copy()
+# OR
+mydict = dict(car)
+# Nested Dictionaries
+myclassmate = {
+    "friend1" : {
+        "name" : "Chantha",
+        "year" : 2003
+    },
+    "friend2" : {
+        "name" : "Deth",
+        "year" : 2004
+    },
+    "friend3" : {
+        "name" : "David",
+        "year" : 2003
+    }
+}
+# or
+friend1 = {
+    "name" : "Chantha",
+    "year" : 2003
+}
+friend2 = {
+    "name" : "Deth",
+    "year" : 2004
+}
+friend3 = {
+    "name" : "David",
+    "year" : 2003
+}
+myfriend ={
+    "friend1" : friend1,
+    "friend2" : friend2,
+    "friend3" : friend3
+}
+# Access Items in Nested Dictionaries
+print(myfriend["friend2"]["name"])
+# Loop Through Nested Dictionaries
+for x, obj in myfriend.items():
+    print(x)
+    for y in obj:
+        print(y, ":", obj[y])
+
+# Python if ... else
